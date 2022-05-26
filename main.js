@@ -84,6 +84,8 @@ const section2 = document.getElementById("game")
 const buttonStart =  document.getElementById('button-start')
 section2.style.display='none'
 buttonStart.addEventListener('click',()=> {
+    audio1.pause();
+    audio2.play();
 section1.style.display='none';
 section2.style.display='block';
 })
@@ -122,6 +124,9 @@ buttonD.addEventListener("click",myButtons)
     wrongMessage.classList.add ("lose")
     wrongMessage.src="./Images/original.gif"
     //wrongMessage.style.color='white';
+    audio2.pause();
+    wrongAnswerAudio.play();
+    
     document.body.appendChild(wrongMessage);
 
     restartButton.innerText='Restart'
@@ -136,6 +141,11 @@ buttonD.addEventListener("click",myButtons)
             counter +=1
     displayQuestion(theQuestion[counter]);
     moneyWins (winning[winning.length-1- counter])
+    audio2.pause();
+    correctAnswerAudio.play();
+    
+    audio2.play();
+
         }
    }
  }
@@ -152,6 +162,8 @@ function restartQuiz(){
  displayQuestion(theQuestion[counter])
  wrongMessage.remove();
  restartButton.remove();
+ wrongAnswerAudio.pause();
+ audio1.play();
  youWin.remove();
  winning.forEach((winningElemment, index)=> {
      if (index !== winning.length - 1) {
@@ -171,6 +183,8 @@ function restartQuiz(){
 youWin.innerText = 'You are a Millionaire';
 youWin.classList.add ("win");
 youWin.src="./Images/giphy.gif"
+audio2.pause();
+millionairAudi.play();
 document.body.appendChild(youWin);
 restartButton.innerText='Restart'
 document.body.appendChild(restartButton);
@@ -187,6 +201,22 @@ console.log(winning[winning.length-1- counter]);
 }
 moneyWins();
 
+
+////////// Audio function
+
+let audio1 = new Audio('./music/1 000 Win - Who Wants to Be a Millionaire.mp3');
+audio1.addEventListener('canplaythrough',()=>{
+    audio1.loop=true;
+    audio1.play();
+})
+let audio2 = new Audio('./music/4 000 Final Answer - Who Wants to Be a Millionaire (1).mp3');
+  audio2.loop=true;
+
+let wrongAnswerAudio = new Audio('./music/8 000 Lose - Who Wants to Be a Millionaire.mp3')
+
+let correctAnswerAudio = new Audio('./music/2 000 Win - Who Wants to Be a Millionaire.mp3')
+
+let millionairAudi = new Audio('./music/Kandidat geht Millionenshow Soundeffect.mp3')
 
 /////function for the countdown timer
 // const timerGame = document.querySelector('h1');
