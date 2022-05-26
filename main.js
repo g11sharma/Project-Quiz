@@ -218,7 +218,7 @@ let correctAnswerAudio = new Audio('./music/2 000 Win - Who Wants to Be a Millio
 
 let millionairAudi = new Audio('./music/Kandidat geht Millionenshow Soundeffect.mp3')
 
-/////function for the countdown timer
+/////function for the countdown timer which i didn't use
 // const timerGame = document.querySelector('h1');
 // function timeCount() {
 //     let timeCountDown = null;
