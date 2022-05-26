@@ -42,6 +42,17 @@ let theQuestion = [
         },
         answer: 'b'
     },
+    {
+        question : "what my name ?",
+        Options : {
+            a : "gourav",
+            b : "gaurav",
+            c : "gurav",
+            d : "goorav"
+
+        },
+        answer: 'b'
+    }
 
    
 ]
@@ -64,15 +75,24 @@ const buttonD = document.querySelector('#button-d')
 //console.log(buttonA);
 const buttonRestart = document.querySelector('#button-restart')
 
-const wrongMessage = document.createElement("h2");
+const wrongMessage = document.createElement("img");
 const restartButton = document.createElement('button');
-const youWin = document.createElement('h2');
+const youWin = document.createElement('img');
 const winning = document.querySelectorAll(".container-Second p")
+const section1 = document.getElementById('start-game')
+const section2 = document.getElementById("game")
+const buttonStart =  document.getElementById('button-start')
+section2.style.display='none'
+buttonStart.addEventListener('click',()=> {
+section1.style.display='none';
+section2.style.display='block';
+})
 
 
 /////This function displays the question on the page
 function displayQuestion (question){
   ///  console.log(question)
+ 
  quizQuestionElement.textContent = question.question;
  buttonA.innerText = question.Options.a;
  buttonB.innerText = question.Options.b;
@@ -94,15 +114,18 @@ buttonD.addEventListener("click",myButtons)
    
  function myButtons(events){
      console.log(events.target, events.target?.textContent);
-    console.log("test",theQuestion[counter].Options[theQuestion[counter].answer])
+    console.log(theQuestion[counter].Options[theQuestion[counter].answer])
    if (events.target.textContent !== theQuestion[counter].Options[theQuestion[counter].answer])
    {
 
-    wrongMessage.innerText = 'You Lose';
-    wrongMessage.style.color='white';
+    //wrongMessage.innerText = 'You Lose';
+    wrongMessage.classList.add ("lose")
+    wrongMessage.src="./Images/original.gif"
+    //wrongMessage.style.color='white';
     document.body.appendChild(wrongMessage);
 
     restartButton.innerText='Restart'
+    restartButton.classList.add ("restart")
     document.body.appendChild(restartButton);
     restartButton.addEventListener("click",restartQuiz)
 
@@ -130,6 +153,14 @@ function restartQuiz(){
  wrongMessage.remove();
  restartButton.remove();
  youWin.remove();
+ winning.forEach((winningElemment, index)=> {
+     if (index !== winning.length - 1) {
+         console.log('the index is ', index)
+         winningElemment.classList.remove("Amount")
+     }
+    })
+ section2.style.display='none'
+ section1.style.display='flex'
  }
 
  ////// function to end the game
@@ -139,6 +170,7 @@ function restartQuiz(){
 
 youWin.innerText = 'You are a Millionaire';
 youWin.classList.add ("win");
+youWin.src="./Images/giphy.gif"
 document.body.appendChild(youWin);
 restartButton.innerText='Restart'
 document.body.appendChild(restartButton);
@@ -149,8 +181,34 @@ restartButton.addEventListener("click",restartQuiz)
 
 function moneyWins (){
 const winning = document.querySelectorAll(".container-Second p")
-
+winning[winning.length-1- counter].classList.add("Amount")
+winning[winning.length-2- counter].classList.remove("Amount")
 console.log(winning[winning.length-1- counter]);
 }
 moneyWins();
+
+
+/////function for the countdown timer
+// const timerGame = document.querySelector('h1');
+// function timeCount() {
+//     let timeCountDown = null;
+//   let t imeSecond = 10;
+//   timerGame.innerHTML = `00:${timeSecond}`;
+//   timeCountDown = setInterval(() => {
+//     console.log('gygtgtgtg');
+//     timeSecond--;
+//     displayTimeTwoDigit(timeSecond);
+//     if (timeSecond <= 0 || timeSecond < 1) {
+//       clearInterval(timeCountDown);
+//       toggleloseModal();
+//     }
+//   }, 1000);
+// }
+// function displayTimeTwoDigit(second) {
+//   const min = Math.floor(second / 60);
+//   const sec = Math.floor(second % 60);
+//   timerGame.innerHTML = `${min < 10 ? '0' : ''}${min}:${
+//     sec < 10 ? '0' : ''
+//   }${sec}`;
+// }
 

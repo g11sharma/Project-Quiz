@@ -1,63 +1,215 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    }
-.main-logo{
- height:300px;
- width: 800px;
-}
-
-.body-image{
-    padding: 0;
-    margin: 0;
+.body-img {
     background-image: url(./Images/Qui-Veut-Gagner-des-Millions-__Screen_3.jpg);
     background-repeat: no-repeat;
+     position: relative;
     height: 100vh;
     width: 100vw;
+    margin: 0;
     background-size: cover;
     z-index: -1;
-    justify-content: center;
+}
+
+#start-game{
     display: flex;
+    justify-content: center;
+    height: 100%;
     align-items: center;
+}
+#button-start {
+    width: 150px;
+    height: 70px;
+    border-radius: 60px;
     
-}
-img{
-  height: 100%;
- width: 100%;
- object-fit: contain;
+   
+    animation: startbuttonglowing 1300ms infinite;
 }
 
-.second{
-height:300px;
- width: 800px;
+@keyframes startbuttonglowing {
+    0% {
+        background-color: rgb(238, 241, 236);
+         
+      }
+      50% {
+        background-color: rgb(8, 11, 8);
+        color: white;
+      }
+      100% {
+        background-color:rgb(231, 245, 233);
+        box-shadow: 0 0 5px #0610ce;
+      }
+    }
 
+#timer{
+    color: #e0e0ea;
+}
+#logoImage{
+    width: 250px;
+    right: 40px;
+    display: flex;
+    position: relative;
+    left: 650px;
+    top: 100px;
+   
 }
 .container-Main{
     
-    background-color: rgb(237, 237, 243);
-    width: 300px;
+    background-color: rgb(222, 222, 227);
+    width: 900px;
     height: 130px;
     max-width: 80%;
     border-radius: 10px;
     padding: 10px;
     box-shadow: 0 0 10px 2px;
-
+    position: relative;
+    left: 300px;
+    top: 220px;
+    text-align: center;
+    color: rgb(9, 8, 8);
+    
 }
-.btn-grid{
+
+ .btn-grid {
     display: grid;
     grid-template-columns: repeat(2,auto);
     gap: 20px;
-    margin: 20px O;
+    border-radius: 100px;
+    
+   /* animation: glowing 1300ms infinite;*/
+}
+.btn-grid button{
     border-radius: 90px;
-}
-.container-Second{
- color: azure;
-
-}
-
-.hide{
-    display: none;
+    animation: glowing 1300ms infinite;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: medium;
 }
 
+
+/*button:focus{
+    
+    animation: glowing 1300ms infinite;
+}*/
+
+@keyframes glowing {
+0% {
+    background-color: rgb(238, 241, 236);
+    box-shadow: 0 0 5px #0d05a8;   
+  }
+  50% {
+    background-color: rgb(8, 11, 8);
+    box-shadow: 0 0 20px #2319e8;
+    color: white;
+  }
+  100% {
+    background-color:rgb(231, 245, 233);
+    box-shadow: 0 0 5px #0610ce;
+  }
+}
+
+
+
+@keyframes pSecondContainer {
+    0% {
+              background-color: rgb(27, 27, 26);
+              color: 0 0 5px #f2f2f6;
+            }
+            50% {
+              background-color: rgb(231, 16, 16);
+              color: 0 0 20px #2319e8;
+            }
+            100% {
+              background-color:rgb(17, 17, 22);
+              color: 0 0 5px #e0e0ea;
+            }
+          }
+
+
+.lose{
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   width: 500px;
+   height: 200px;
+   animation-duration: 1s;
+   animation-name: slidein;
+   }
+/*button {
+    border-radius: 90px;
+    animation: restart-Button 1300ms infinite;
+}*/
+@keyframes restart-Button {
+  0% {
+            background-color: rgb(27, 27, 26);
+            color: 0 0 5px #f2f2f6;
+          }
+          50% {
+            background-color: rgb(231, 16, 16);
+            color: 0 0 20px #2319e8;
+          }
+          100% {
+            background-color:rgb(17, 17, 22);
+            color: 0 0 5px #e0e0ea;
+          }
+        }
+
+
+.win{   
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px;
+    height: 200px;
+    animation-duration: 1s;
+    animation-name: slidein;
+}
+
+
+/*/*/ Css for the cash reward 
+.container-Second p {
+    background-color: black;
+    color: white;
+}
+
+p.Amount {
+ display: flex;
+animation: cashprize 1300ms infinite;
+}
+
+p {
+    width: 80px;
+    height: 20px;
+    border-radius: 30px;
+}
+
+@keyframes cashprize{
+    0% {
+        background-color: rgb(238, 241, 236);
+        box-shadow: 0 0 5px #0d05a8;   
+      }
+      50% {
+        background-color: rgb(8, 11, 8);
+        box-shadow: 0 0 20px #2319e8;
+        color: white;
+      }
+      100% {
+        background-color:rgb(231, 245, 233);
+        box-shadow: 0 0 5px #0610ce;
+      }
+    }
+  
+
+
+
+
+@keyframes slidein {
+    from {
+      margin-left: 100%;
+      /* width: 200%; */
+    }
+  
+    to {
+      margin-left: 0%;
+      /* width: 100%; */
+    }
+} 
