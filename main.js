@@ -1,60 +1,82 @@
 let theQuestion = [
     {
-        question : "Where did Scotch whisky originate?",
+        question : "What is Romain's favorite musical instrument?",
         Options : {
-            a : "England",
-            b : "Ireland",
-            c : "Scotland",
-            d : "Iceland"
+            a : "Piano",
+            b : "Drums",
+            c : "violin",
+            d : "guitar"
+        },
+        answer: 'a'
+    },
+    {
+        question : "How is my name spelled ?",
+        Options : {
+            a : "Gaorav",
+            b : "Gaurav",
+            c : "Gourav",
+            d : "Goorav"
+
+        },
+        answer: 'b'
+    },
+    {
+        question : "Which city did Begonia grew ?",
+        Options : {
+            a : "strasbourg",
+            b : "barcelona",
+            c : "Paris",
+            d : "Madrid"
+
+        },
+        answer: 'b'
+    },
+    {
+        question : "What is the name of Robin's movie schedule website ?",
+        Options : {
+            a : "Showcase Cinemas",
+            b : "Fandango",
+            c : "ciaocine",
+            d : "Ster-Kinekor"
+
         },
         answer: 'c'
     },
     {
-        question : "What sort of animal is Walt Disney's Dumbo?",
+        question : "Tzu-Yu Chiu is native of ?",
         Options : {
-            a : "Deer",
-            b : "Rabbit",
-            c : "Donkey",
-            d : "Elephant"
-
-        },
-        answer: 'd'
-    },
-    {
-        question : "What is the capital of Finland?",
-        Options : {
-            a : "helsinki",
-            b : "Copenhagen",
-            c : "Oslo",
-            d : "Stockholm"
+            a : "Taiwan",
+            b : "China",
+            c : "South korea",
+            d : "malaysia"
 
         },
         answer: 'a'
     },
     {
-        question : "Radio was invented by ?",
+        question : "What was the job of Bénédicte ?",
         Options : {
-            a : "alexander graham bell",
-            b : "Nikola Tesla",
-            c : "Thomas Edison",
-            d : "Benjamin Franklin"
+            a : "HR associate",
+            b : "digital sales",
+            c : "business development",
+            d : "IT engineer"
 
         },
-        answer: 'b'
+        answer: 'c'
     },
     {
-        question : "what my name ?",
+        question : "Haroun used to work as a  ?",
         Options : {
-            a : "gourav",
-            b : "gaurav",
-            c : "gurav",
-            d : "goorav"
+            a : "developer",
+            b : "lawyer",
+            c : "nurse",
+            d : "architect"
 
         },
-        answer: 'b'
+        answer: 'd'
     }
 
-   
+  
 ]
 
 let counter =0
